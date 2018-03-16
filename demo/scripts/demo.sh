@@ -1,0 +1,19 @@
+# #!/bin/bash
+#
+# xterm -geometry 50x10+100+100 -fg white -bg blue -xrm 'XTerm.vt100.allowTitleOps: false' -T 'CLIENT 1 INPUT'  -e 'docker attach client1' &
+# xterm -geometry 50x10+420+100 -fg white -bg blue -xrm 'XTerm.vt100.allowTitleOps: false' -T 'CLIENT 1 MESSAGES' -e "docker exec client1 tail -f messages.txt" &
+#
+# xterm -geometry 50x10+100+280 -fg white -bg blue -xrm 'XTerm.vt100.allowTitleOps: false' -T 'CLIENT 2 INPUT' -e "docker attach client2" &
+# xterm -geometry 50x10+420+280 -fg white -bg blue -xrm 'XTerm.vt100.allowTitleOps: false' -T 'CLIENT 2 MESSAGES' -e "docker exec client2 tail -f messages.txt" &
+
+docker attach client1 &
+docker exec client1 tail -f messages.txt &
+
+docker attach client2 &
+docker exec client2 tail -f messages.txt &
+
+docker attach client3 &
+docker exec client3 tail -f messages.txt &
+
+docker attach client4 &
+docker exec client4 tail -f messages.txt
